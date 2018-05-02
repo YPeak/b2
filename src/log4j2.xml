@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<Configuration status="WARN">
-
+<Configuration status="warn">
     <Appenders>
-
         <Console name="Console" target="SYSTEM_OUT">
-
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-
+            <PatternLayout pattern="[%-5p] %d %c - %m%n" />
         </Console>
-
+        <File name="File" fileName="C:/Users/yu/Desktop/log/log22.log">
+            <PatternLayout pattern="%m%n" />
+        </File>
     </Appenders>
 
     <Loggers>
-
-        <Logger name="com.demo.NamedHierarchy" level="trace">
-
-            <AppenderRef ref="Console"/>
-
+        <!--logger 中的name属性可以为类也可以为包  将类中、包中的类中的日志打印到指定文件-->
+        <!--https://www.cnblogs.com/morvenhuang/p/3958086.html-->
+        <Logger name="com.controller.login" level="debug" additivity="true">
+            <AppenderRef ref="File" />
         </Logger>
-
-        <Logger name="com.demo" level="debug">
-
-            <AppenderRef ref="Console"/>
-
-        </Logger>
-
-        <Root level="error">
-
-            <AppenderRef ref="Console"/>
-
+        <Root level="debug">
+            <AppenderRef ref="Console" />
         </Root>
-
     </Loggers>
-
 </Configuration>

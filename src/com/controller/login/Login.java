@@ -14,9 +14,10 @@ public class Login {
     @RequestMapping("/login")
    public String test(){
         System.out.println("登入页面");
-       logger.debug("asdfasdfadsf");
+        logger.debug("asdfasdfadsf");
         logger.error("111222222222222");
         logger.info("This is info message.");
+        logger.fatal("这是fatal");
        return "welcom";
    }
 }
