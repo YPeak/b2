@@ -21,8 +21,10 @@ public class connect {
         InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session = sqlSessionFactory.openSession();
-        User user = new User("11","22","33");
+        User user = new User("34","22","34");
         session.insert("com.entity.UserMapper.save",user);
+//        session.update("com.entity.UserMapper.update",user);
+//        session.delete("com.entity.UserMapper.delete",user);
         session.commit();
         session.close();
 
