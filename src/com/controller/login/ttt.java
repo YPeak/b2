@@ -11,12 +11,12 @@ public class ttt {
 //    private static Logger logger = Logger.getLogger(ttt.class);
     private static Logger logger = LogManager.getLogger(ttt.class.getName());
     public static void main(String[] args) {
-        while (true){
-            logger.debug("这是debug");
-            logger.info("这是info");
-            logger.error("这是error");
-            logger.fatal("这是fatal");
-        }
+
+        logger.debug("22222这是debug");
+        logger.info("这是info");
+        logger.error("这是error");
+        logger.fatal("这是fatal");
+
 
     }
 }
