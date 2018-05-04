@@ -1,9 +1,13 @@
 package com.entity;
 
+import org.apache.ibatis.type.Alias;
+
 /**
  * Created by shuwei.yu.
  * on 2018/5/4.
  */
+//别名不区分大小写
+@Alias("user")
 public class User {
     private String name;
 
