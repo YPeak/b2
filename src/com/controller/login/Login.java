@@ -13,11 +13,11 @@ public class Login {
     private static Logger logger = Logger.getLogger(Login.class);
     @RequestMapping("/login")
    public String test(){
-        System.out.println("登入页面");
-        logger.debug("asdfasdfadsf");
-        logger.error("111222222222222");
-        logger.info("This is info message.");
-        logger.fatal("这是fatal");
+//        System.out.println("登入页面");
+        logger.debug("登入页面");
+//        logger.error("登入页面");
+//        logger.info("登入页面");
+//        logger.fatal("登入页面");
        return "welcom";
    }
 }

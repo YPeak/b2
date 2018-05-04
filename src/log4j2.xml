@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="warn">
     <Appenders>
+        <!--输出日志到控制台、显示格式-->
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="[%-5p] %d %c - %m%n" />
         </Console>
-        <File name="File" fileName="C:/Users/yu/Desktop/log/log22.log">
-            <PatternLayout pattern="%m%n" />
+        <!--打印日子到哪个文件中、格式-->
+        <File name="File" fileName="C:/out_git/workspace/untitled/log.log">
+            <PatternLayout pattern="[%-5p] %d %c - %m%n" />
         </File>
+
+        <RollingFile name="RollingFile" fileName="C:/out_git/workspace/untitled/log2.log"
+
+                     filePattern="C:/out_git/workspace/untitled/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="[%-5p] %d %c - %m%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <!--每个文件的大小-->
+                <SizeBasedTriggeringPolicy size="25 KB" />
+            </Policies>
+            <!--设置的生成文件的个数 默认为7-->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
     </Appenders>
 
     <Loggers>
         <!--logger 中的name属性可以为类也可以为包  将类中、包中的类中的日志打印到指定文件-->
         <!--https://www.cnblogs.com/morvenhuang/p/3958086.html-->
-        <Logger name="com.controller.login" level="debug" additivity="true">
+        <Logger name="com.controller" level="debug" additivity="true">
             <AppenderRef ref="File" />
         </Logger>
+
+        <!--root中的level好像不能控制输出到控制台的等级 和 文件中的日志输出-->
         <Root level="debug">
             <AppenderRef ref="Console" />
         </Root>
