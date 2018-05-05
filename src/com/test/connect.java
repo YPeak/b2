@@ -9,7 +9,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -25,6 +26,8 @@ public class connect {
         session.insert("com.entity.UserMapper.save",user);
 //        session.update("com.entity.UserMapper.update",user);
 //        session.delete("com.entity.UserMapper.delete",user);
+        Map<String,Object> map = new HashMap<>();
+        map.put("id",1);
         session.commit();
         session.close();
 

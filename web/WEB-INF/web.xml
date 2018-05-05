@@ -3,6 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <!--配置spring核心监听器默认会以/WEB-IINF/applicationContext.xml作为配置文件-->
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
+    <!--</listener>-->
+    <!--&lt;!&ndash;ContextLoaderListener参数用来指定spring配置文件&ndash;&gt;-->
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>/WEB-INF/applicationContext*.xml</param-value>-->
+    <!--</context-param>-->
 
     <servlet>
         <servlet-name>spring-mvc</servlet-name>
@@ -20,6 +29,21 @@
         <servlet-name>spring-mvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <!--编码过滤器-->
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!--静态资源访问配置，这样配置之后，才能访问这样后缀的静态资源  mvc不赞成直接访问页面-->
     <!--<servlet-mapping>-->
         <!--<servlet-name>default</servlet-name>-->

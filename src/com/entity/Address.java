@@ -2,12 +2,34 @@ package com.entity;
 
 import org.apache.ibatis.type.Alias;
 
+import java.io.Serializable;
+
 /**
  * Created by shuwei.yu.
  * on 2018/5/4.
  */
 @Alias("address")
-public class Address {
+public class Address implements Serializable{
+    public Address() {
+    }
+
+    private int id;
+
+    public Address(int id, String name, String age, String mm) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.mm = mm;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String name;
 
     public String getName() {
