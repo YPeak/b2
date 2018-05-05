@@ -13,8 +13,12 @@ public class InterfaceTest {
         SqlSession sqlSession = SqlSessionFactory.getSqlSession();
 //        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         AddressMapper addressMapper = sqlSession.getMapper(AddressMapper.class);
-        Address address = new Address("321","213","231");
-        addressMapper.save(address);
+        Address address = new Address("55","55","556");
+//        User user = new User("55","66","77");
+//        addressMapper.save(address);
+//        userMapper.save(user);
+       int aaa =  addressMapper.saveAddress(address);
+        System.out.println(aaa);
         sqlSession.commit();
         sqlSession.close();
     }

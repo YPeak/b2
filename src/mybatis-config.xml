@@ -48,8 +48,8 @@
     <!-- pojo的映射文件UserMapper引入到配入到配置文件中 -->
     <mappers>
         <!-- resource要写成路径 -->
-        <mapper resource="com/mapper/UserMapper.xml"/>
-        <mapper resource="com/mapper/AddressMapper.xml"/>
-        <!--<package name="com.entity"/>&lt;!&ndash; ???用处？？？ &ndash;&gt;-->
+        <!--<mapper resource="com/mapper/UserMapper.xml"/>-->
+        <!--<mapper resource="com/mapper/AddressMapper.xml"/>-->
+        <package name="com.interfaceMapper"/><!-- 接口的包名，加载接口。不是mapper.xml的包 -->
     </mappers>
 </configuration>
