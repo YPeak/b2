@@ -1,9 +1,8 @@
-package com.interfaceMapper;
+package com.mapper;
 
-import com.entity.Address;
 import com.dynamicSql.AddressMapperDynamicSql;
+import com.entity.Address;
 import org.apache.ibatis.annotations.*;
-
 
 import java.util.Map;
 
@@ -15,6 +14,10 @@ public interface AddressMapper {
 
 //    调用的mapper.xml中的sql
     void save(Address address);
+
+    Address select(Address address);
+
+    Address  login(@Param("username")String username,@Param("age")String age);
 
 //    采用注解方式：如果接口类中有一个方法出现问题则其他的方法都会出现问题
 //    @Insert() 注解sql语句

@@ -50,6 +50,6 @@
         <!-- resource要写成路径 -->
         <!--<mapper resource="com/mapper/UserMapper.xml"/>-->
         <!--<mapper resource="com/mapper/AddressMapper.xml"/>-->
-        <package name="com.interfaceMapper"/><!-- 接口的包名，加载接口。不是mapper.xml的包 -->
+        <package name="com.mapper"/><!-- 接口的包名，加载接口.如果用这种包加载必须接口和mapper在一起-->
     </mappers>
 </configuration>
